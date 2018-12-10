@@ -1,4 +1,3 @@
-'use strict';
 function isSingular(value) {
   return value % 100 !== 11 && value % 10 === 1;
 }
