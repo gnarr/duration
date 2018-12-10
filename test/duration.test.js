@@ -107,3 +107,10 @@ test('convert microseconds to nanoseconds', () => {
 test('Convert to human readable form', () => {
   expect(new Duration('840 seconds').toString()).toBe("14 minutes");
 });
+
+test('should fail on bad input', () => {
+  expect(() => new Duration('20 meconds')).toThrow();
+  expect(() => new Duration('10')).toThrow();
+  expect(() => new Duration('minute')).toThrow();
+  expect(() => new Duration(8000)).toThrow();
+});
