@@ -1,0 +1,37 @@
+{
+  "name": "duration-converter",
+  "version": "1.0.0",
+  "description": "a small utility for converting between duration units. ",
+  "main": "duration.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnarr/duration.git"
+  },
+  "keywords": [
+    "duration",
+    "period",
+    "time",
+    "humanize",
+    "hours",
+    "minutes",
+    "seconds",
+    "days",
+    "years",
+    "months",
+    "decades",
+    "milleniums",
+    "milliseconds",
+    "nanoseconds",
+    "microseconds"
+  ],
+  "author": "Gunnar Cortes Heimisson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gnarr/duration/issues"
+  },
+  "homepage": "https://github.com/gnarr/duration#readme"
+}
+
