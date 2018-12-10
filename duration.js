@@ -158,7 +158,8 @@ module.exports = class Duration {
       const test = this[getter];
       if (test >= 1 ) {
         const unit = isSingular(test) ? toSingular(getter) : getter;
-        return `${test} ${unit.toLowerCase()}`;
+        const formatted = test.toLocaleString(undefined, {maximumFractionDigits: 2});
+        return `${formatted} ${unit.toLowerCase()}`;
       }
     }
     return `${this.MicroSeconds} microseconds`;

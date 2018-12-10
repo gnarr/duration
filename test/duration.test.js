@@ -103,3 +103,7 @@ test('convert milliseconds to microseconds', () => {
 test('convert microseconds to nanoseconds', () => {
   expect(new Duration('5 microseconds').NanoSeconds).toBe(5000);
 });
+
+test('Convert to human readable form', () => {
+  expect(new Duration('840 seconds').toString()).toBe("14 minutes");
+});
