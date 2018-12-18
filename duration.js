@@ -18,7 +18,7 @@ module.exports = class Duration {
       this.milliSeconds = 0;
       return;
     }
-    const parts = input.split(/([0-9]+)/);
+    const parts = input.split(/([0-9]+\.?[0-9]*)/);
     const number = Number(parts[1]);
     if (isNaN(number) || parts[2].length === 0) {
       throw new Error('Error in input');

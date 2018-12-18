@@ -104,6 +104,14 @@ test('convert microseconds to nanoseconds', () => {
   expect(new Duration('5 microseconds').NanoSeconds).toBe(5000);
 });
 
+test('convert floating point microseconds to nanoseconds', () => {
+  expect(new Duration('8.432 microseconds').NanoSeconds).toBe(8432);
+});
+
+test('convert floating point microseconds to milliseconds', () => {
+  expect(new Duration('0.432 microseconds').MilliSeconds).toBe(0.000432);
+});
+
 test('Convert to human readable form', () => {
   expect(new Duration('840 seconds').toString()).toBe("14 minutes");
 });
@@ -113,4 +121,8 @@ test('should fail on bad input', () => {
   expect(() => new Duration('10')).toThrow();
   expect(() => new Duration('minute')).toThrow();
   expect(() => new Duration(8000)).toThrow();
+});
+
+test('should not fail on good input', () => {
+  expect(() => new Duration("10488.469970703125 milliseconds")).not.toThrow();
 });
