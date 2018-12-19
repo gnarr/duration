@@ -21,7 +21,7 @@ module.exports = class Duration {
     const parts = input.split(/([0-9]+\.?[0-9]*)/);
     const number = Number(parts[1]);
     if (isNaN(number) || parts[2].length === 0) {
-      throw new Error('Error in input');
+      throw new Error(`Error in input: '${input}'`);
     }
     const unit = parts[2].trim().toLowerCase();
     switch(unit) {
@@ -75,7 +75,7 @@ module.exports = class Duration {
         this.Millenniums = number;
         return;
       default:
-        throw new Error('Error in input');
+        throw new Error(`Error in input: '${input}'`);
     }
   }
   get NanoSeconds() {

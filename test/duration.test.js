@@ -126,3 +126,7 @@ test('should fail on bad input', () => {
 test('should not fail on good input', () => {
   expect(() => new Duration("10488.469970703125 milliseconds")).not.toThrow();
 });
+
+test('should show input on error', () => {
+  expect(() => new Duration("10488,469970703125 milliseconds")).toThrowError("Error in input: '10488,469970703125 milliseconds'");
+});
