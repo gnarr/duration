@@ -78,9 +78,64 @@ module.exports = class Duration {
         throw new Error(`Error in input: '${input}'`);
     }
   }
+  static fromNanoseconds(nanoseconds) {
+    const duration = new Duration();
+    duration.NanoSeconds = nanoseconds;
+    return duration;
+  }
+  static fromMicroSeconds(microseconds) {
+    const duration = new Duration();
+    duration.MicroSeconds = microseconds;
+    return duration;
+  }
   static fromMilliseconds(milliSeconds) {
     const duration = new Duration();
     duration.MilliSeconds = milliSeconds;
+    return duration;
+  }
+  static fromSeconds(seconds) {
+    const duration = new Duration();
+    duration.Seconds = seconds;
+    return duration;
+  }
+  static fromMinutes(minutes) {
+    const duration = new Duration();
+    duration.Minutes = minutes;
+    return duration;
+  }
+  static fromHours(hours) {
+    const duration = new Duration();
+    duration.Hours = hours;
+    return duration;
+  }
+  static fromDays(days) {
+    const duration = new Duration();
+    duration.Days = days;
+    return duration;
+  }
+  static fromWeeks(weeks) {
+    const duration = new Duration();
+    duration.Weeks = weeks;
+    return duration;
+  }
+  static fromYears(years) {
+    const duration = new Duration();
+    duration.Years = years;
+    return duration;
+  }
+  static fromDecades(decades) {
+    const duration = new Duration();
+    duration.Decades = decades;
+    return duration;
+  }
+  static fromCenturies(centuries) {
+    const duration = new Duration();
+    duration.Centuries = centuries;
+    return duration;
+  }
+  static fromMillenniums(millenniums) {
+    const duration = new Duration();
+    duration.Millenniums = millenniums;
     return duration;
   }
   get NanoSeconds() {

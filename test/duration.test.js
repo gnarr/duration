@@ -131,6 +131,51 @@ test('should show input on error', () => {
   expect(() => new Duration("10488,469970703125 milliseconds")).toThrowError("Error in input: '10488,469970703125 milliseconds'");
 });
 
-test('should create a new instance', () => {
+test('should create a new instance from nanoseconds', () => {
+  expect(Duration.fromNanoseconds(18000000).MilliSeconds).toBe(18);
+});
+
+test('should create a new instance from microseconds', () => {
+  expect(Duration.fromMicroSeconds(18000).MilliSeconds).toBe(18);
+});
+
+test('should create a new instance from milliseconds', () => {
   expect(Duration.fromMilliseconds(18000).Seconds).toBe(18);
 });
+
+test('should create a new instance from seconds', () => {
+  expect(Duration.fromSeconds(120).Minutes).toBe(2);
+});
+
+test('should create a new instance from minutes', () => {
+  expect(Duration.fromMinutes(60).Seconds).toBe(3600);
+});
+
+test('should create a new instance from hours', () => {
+  expect(Duration.fromHours(48).Days).toBe(2);
+});
+
+test('should create a new instance from days', () => {
+  expect(Duration.fromDays(14).Weeks).toBe(2);
+});
+
+test('should create a new instance from weeks', () => {
+  expect(Duration.fromWeeks(10).Days).toBe(70);
+});
+
+test('should create a new instance from years', () => {
+  expect(Duration.fromYears(20).Decades).toBe(2);
+});
+
+test('should create a new instance from decades', () => {
+  expect(Duration.fromDecades(4).Years).toBe(40);
+});
+
+test('should create a new instance from centuries', () => {
+  expect(Duration.fromCenturies(12).Years).toBe(1200);
+});
+
+test('should create a new instance from millenniums', () => {
+  expect(Duration.fromMillenniums(2).Years).toBe(2000);
+});
+
