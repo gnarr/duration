@@ -130,3 +130,7 @@ test('should not fail on good input', () => {
 test('should show input on error', () => {
   expect(() => new Duration("10488,469970703125 milliseconds")).toThrowError("Error in input: '10488,469970703125 milliseconds'");
 });
+
+test('should create a new instance', () => {
+  expect(Duration.fromMilliseconds(18000).Seconds).toBe(18);
+});

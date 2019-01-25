@@ -78,6 +78,11 @@ module.exports = class Duration {
         throw new Error(`Error in input: '${input}'`);
     }
   }
+  static fromMilliseconds(milliSeconds) {
+    const duration = new Duration();
+    duration.MilliSeconds = milliSeconds;
+    return duration;
+  }
   get NanoSeconds() {
     return this.MicroSeconds * 1000;
   }
