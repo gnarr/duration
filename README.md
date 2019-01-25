@@ -13,6 +13,13 @@ const Duration = require('duration-converter');
 
 const sevenWeeks = new Duration('7 Weeks');
 const milliseconds = sevenWeeks.MilliSeconds;
+
+const threeDays = Duration.fromDays(3);
+const hours = threeDays.Hours;
+
+// will print out "4 days"
+console.log(Duration.fromSeconds(345600).toString());
+
 ```
 
 ## Warning!
