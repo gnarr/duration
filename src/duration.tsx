@@ -1,4 +1,4 @@
-interface IDuration {
+export interface IDuration {
   NanoSeconds: number;
   MicroSeconds: number;
   MilliSeconds: number;
@@ -21,7 +21,7 @@ interface IDuration {
  *
  * @class Duration
  */
-module.exports = class Duration implements IDuration {
+export class Duration implements IDuration {
   private milliSeconds: number;
   public constructor(input?: string) {
     this.milliSeconds = 0;
