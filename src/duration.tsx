@@ -1,9 +1,18 @@
-function isSingular(value) {
-  return value % 100 !== 11 && value % 10 === 1;
+interface IDuration {
+  NanoSeconds: number;
+  MicroSeconds: number;
+  MilliSeconds: number;
+  Seconds: number;
+  Minutes: number;
+  Hours: number;
+  Days: number;
+  Weeks: number;
+  Years: number;
+  Decades: number;
+  Centuries: number;
+  Millenniums: number;
 }
-function toSingular(value) {
-  return value.replace(/ies$/, 'y').replace(/s$/, '');
-}
+
 /**
  * Duration can easily convert between units. E.g '7 Weeks' to Micro Seconds.
  * Usage:
@@ -12,10 +21,11 @@ function toSingular(value) {
  *
  * @class Duration
  */
-module.exports = class Duration {
-  constructor(input) {
+module.exports = class Duration implements IDuration {
+  private milliSeconds: number;
+  public constructor(input?: string) {
+    this.milliSeconds = 0;
     if (!input) {
-      this.milliSeconds = 0;
       return;
     }
     const parts = input.split(/([0-9]+\.?[0-9]*)/);
@@ -24,116 +34,116 @@ module.exports = class Duration {
       throw new Error(`Error in input: '${input}'`);
     }
     const unit = parts[2].trim().toLowerCase();
-    switch(unit) {
-      case 'nanosecond':
-      case 'nanoseconds':
+    switch (unit) {
+      case "nanosecond":
+      case "nanoseconds":
         this.NanoSeconds = number;
         return;
-      case 'microsecond':
-      case 'microseconds':
+      case "microsecond":
+      case "microseconds":
         this.MicroSeconds = number;
         return;
-      case 'millisecond':
-      case 'milliseconds':
+      case "millisecond":
+      case "milliseconds":
         this.MilliSeconds = number;
         return;
-      case 'second':
-      case 'seconds':
+      case "second":
+      case "seconds":
         this.Seconds = number;
         return;
-      case 'minute':
-      case 'minutes':
+      case "minute":
+      case "minutes":
         this.Minutes = number;
         return;
-      case 'hour':
-      case 'hours':
+      case "hour":
+      case "hours":
         this.Hours = number;
         return;
-      case 'day':
-      case 'days':
+      case "day":
+      case "days":
         this.Days = number;
         return;
-      case 'week':
-      case 'weeks':
+      case "week":
+      case "weeks":
         this.Weeks = number;
         return;
-      case 'year':
-      case 'years':
+      case "year":
+      case "years":
         this.Years = number;
         return;
-      case 'decade':
-      case 'decades':
+      case "decade":
+      case "decades":
         this.Decades = number;
         return;
-      case 'century':
-      case 'centuries':
+      case "century":
+      case "centuries":
         this.Centuries = number;
         return;
-      case 'millennium':
-      case 'millenniums':
-      case 'millennia':
+      case "millennium":
+      case "millenniums":
+      case "millennia":
         this.Millenniums = number;
         return;
       default:
         throw new Error(`Error in input: '${input}'`);
     }
   }
-  static fromNanoseconds(nanoseconds) {
+  public static fromNanoseconds(nanoseconds: number) {
     const duration = new Duration();
     duration.NanoSeconds = nanoseconds;
     return duration;
   }
-  static fromMicroSeconds(microseconds) {
+  public static fromMicroSeconds(microseconds: number) {
     const duration = new Duration();
     duration.MicroSeconds = microseconds;
     return duration;
   }
-  static fromMilliseconds(milliSeconds) {
+  public static fromMilliseconds(milliSeconds: number) {
     const duration = new Duration();
     duration.MilliSeconds = milliSeconds;
     return duration;
   }
-  static fromSeconds(seconds) {
+  public static fromSeconds(seconds: number) {
     const duration = new Duration();
     duration.Seconds = seconds;
     return duration;
   }
-  static fromMinutes(minutes) {
+  public static fromMinutes(minutes: number) {
     const duration = new Duration();
     duration.Minutes = minutes;
     return duration;
   }
-  static fromHours(hours) {
+  public static fromHours(hours: number) {
     const duration = new Duration();
     duration.Hours = hours;
     return duration;
   }
-  static fromDays(days) {
+  public static fromDays(days: number) {
     const duration = new Duration();
     duration.Days = days;
     return duration;
   }
-  static fromWeeks(weeks) {
+  public static fromWeeks(weeks: number) {
     const duration = new Duration();
     duration.Weeks = weeks;
     return duration;
   }
-  static fromYears(years) {
+  public static fromYears(years: number) {
     const duration = new Duration();
     duration.Years = years;
     return duration;
   }
-  static fromDecades(decades) {
+  public static fromDecades(decades: number) {
     const duration = new Duration();
     duration.Decades = decades;
     return duration;
   }
-  static fromCenturies(centuries) {
+  public static fromCenturies(centuries: number) {
     const duration = new Duration();
     duration.Centuries = centuries;
     return duration;
   }
-  static fromMillenniums(millenniums) {
+  public static fromMillenniums(millenniums: number) {
     const duration = new Duration();
     duration.Millenniums = millenniums;
     return duration;
@@ -211,14 +221,37 @@ module.exports = class Duration {
     this.Centuries = millenniums * 10;
   }
   static getters() {
-    return ['NanoSeconds', 'MicroSeconds', 'MilliSeconds', 'Seconds', 'Minutes', 'Hours', 'Days', 'Weeks', 'Years', 'Decades', 'Centuries', 'Millenniums'];
+    return [
+      "NanoSeconds",
+      "MicroSeconds",
+      "MilliSeconds",
+      "Seconds",
+      "Minutes",
+      "Hours",
+      "Days",
+      "Weeks",
+      "Years",
+      "Decades",
+      "Centuries",
+      "Millenniums"
+    ];
   }
-  toString() {
-    for (const getter of Duration.getters().reverse()) {
-      const test = this[getter];
-      if (test >= 1 ) {
-        const unit = isSingular(test) ? toSingular(getter) : getter;
-        const formatted = test.toLocaleString(undefined, {maximumFractionDigits: 2});
+
+  private static isSingular(value: number) {
+    return value % 100 !== 11 && value % 10 === 1;
+  }
+  private static toSingular(value: string) {
+    return value.replace(/ies$/, "y").replace(/s$/, "");
+  }
+
+  public toString() {
+    for (const getter of (Duration.getters()).reverse()) {
+      const test = this[getter as (keyof IDuration)];
+      if (test >= 1) {
+        const unit = Duration.isSingular(test) ? Duration.toSingular(getter) : getter;
+        const formatted = test.toLocaleString(undefined, {
+          maximumFractionDigits: 2
+        });
         return `${formatted} ${unit.toLowerCase()}`;
       }
     }
