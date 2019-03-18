@@ -2,8 +2,10 @@
   "name": "duration-converter",
   "version": "1.2.1",
   "description": "a small utility for converting between duration units. ",
-  "main": "duration.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "jest"
   },
   "repository": {
@@ -34,6 +36,13 @@
   },
   "homepage": "https://github.com/gnarr/duration#readme",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.3",
+    "jest": "^23.6.0",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

@@ -1,4 +1,4 @@
-const Duration = require('../duration');
+const Duration = require('./duration');
 
 test('convert nanoseconds to microseconds', () => {
   expect(new Duration('4000 nanoseconds').MicroSeconds).toBe(4);
