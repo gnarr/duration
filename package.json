@@ -2,8 +2,8 @@
   "name": "duration-converter",
   "version": "1.2.1",
   "description": "a small utility for converting between duration units. ",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/duration.js",
+  "types": "dist/duration.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest"
