@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/gnarr/duration.svg?branch=master)](https://travis-ci.org/gnarr/duration)
 [![Coverage Status](https://coveralls.io/repos/github/gnarr/duration/badge.svg?branch=master)](https://coveralls.io/github/gnarr/duration?branch=master)
+[![npm version][npm-image]][npm-url]
+![Transpilation status][transpilation-image]
 
 # duration
 A small utility for converting between duration units. E.g '7 Weeks' to Micro Seconds.
