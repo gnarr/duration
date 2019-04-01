@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "lint": "tslint -c tslint.json src/*.ts --fix --format verbose --project tsconfig.json"
+    "lint": "tslint -c tslint.json src/*.ts --fix --format verbose --project tsconfig.json",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -39,12 +40,43 @@
   "devDependencies": {
     "@types/jest": "^24.0.11",
     "@types/node": "^11.12.2",
+    "coveralls": "^3.0.3",
     "jest": "^24.5.0",
     "ts-jest": "^24.0.1",
+    "ts-node": "^8.0.3",
     "tslint": "^5.14.0",
     "typescript": "^3.4.1"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "transform": {
+      ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "mapCoverage": true
   }
 }
