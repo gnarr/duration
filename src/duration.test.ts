@@ -1,4 +1,4 @@
-import { Duration } from "./duration";
+import { Duration } from './duration';
 
 test("convert nanoseconds to microseconds", () => {
   expect(new Duration("4000 nanoseconds").MicroSeconds).toBe(4);
@@ -116,6 +116,10 @@ test("Convert to human readable form", () => {
   expect(new Duration("840 seconds").toString()).toBe("14 minutes");
 });
 
+test("Convert to human readable form", () => {
+  expect(new Duration("0 microseconds").toString()).toBe("0 microseconds");
+});
+
 test("should fail on bad input", () => {
   expect(() => new Duration("20 meconds")).toThrow();
   expect(() => new Duration("10")).toThrow();
@@ -128,7 +132,7 @@ test("should not fail on good input", () => {
 
 test("should show input on error", () => {
   expect(() => new Duration("10488,469970703125 milliseconds")).toThrowError(
-    "Error in input: '10488,469970703125 milliseconds'",
+    "Error in input: '10488,469970703125 milliseconds'"
   );
 });
 
@@ -178,4 +182,9 @@ test("should create a new instance from centuries", () => {
 
 test("should create a new instance from millenniums", () => {
   expect(Duration.fromMillenniums(2).Years).toBe(2000);
+});
+
+test("should give a single month cookies when provided with months", () => {
+// tslint:disable-next-line: no-string-literal
+  expect(Duration["toSingular"]("Months")).toBe("Month");
 });
