@@ -1,7 +1,7 @@
 # duration
 [![Build Status][1]][2]
-[![Coverage Status][3][4]
-[![npm][4][5]
+[![Coverage Status][3]][4]
+[![npm][4]][5]
 
 [1]: https://travis-ci.org/gnarr/duration.svg?branch=master
 [2]: https://travis-ci.org/gnarr/duration
