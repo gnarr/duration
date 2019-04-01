@@ -1,6 +1,6 @@
 {
   "name": "duration-converter",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "a small utility for converting between duration units. ",
   "main": "dist/duration.js",
   "types": "dist/duration.d.ts",
@@ -10,7 +10,10 @@
     "lint": "tslint -c tslint.json src/*.ts --fix --format verbose --project tsconfig.json",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
-  "files": ["dist/duration.js", "dist/duration.d.ts"],
+  "files": [
+    "dist/duration.js",
+    "dist/duration.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gnarr/duration.git"
