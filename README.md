@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/gnarr/duration.svg?branch=master)](https://travis-ci.org/gnarr/duration)
 [![Coverage Status](https://coveralls.io/repos/github/gnarr/duration/badge.svg?branch=master)](https://coveralls.io/github/gnarr/duration?branch=master)
 
 # duration
