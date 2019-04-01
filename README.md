@@ -1,6 +1,21 @@
-[![Coverage Status](https://coveralls.io/repos/github/gnarr/duration/badge.svg?branch=master)](https://coveralls.io/github/gnarr/duration?branch=master)
-
 # duration
+[![Build Status][1]][2]
+[![Coverage Status][3]][4]
+[![npm][5]][6]
+[![dependencies Status][7]][8]
+[![devDependencies Status][9]][10]
+
+[1]: https://travis-ci.org/gnarr/duration.svg?branch=master
+[2]: https://travis-ci.org/gnarr/duration
+[3]: https://coveralls.io/repos/github/gnarr/duration/badge.svg?branch=master
+[4]: https://coveralls.io/github/gnarr/duration?branch=master
+[5]: https://img.shields.io/npm/v/duration-converter.svg?style=flat-square
+[6]: https://www.npmjs.com/package/duration-converter
+[7]: https://david-dm.org/gnarr/duration.svg
+[8]: https://david-dm.org/gnarr/duration
+[9]: https://david-dm.org/gnarr/duration/dev-status.svg
+[10]: https://david-dm.org/gnarr/duration?type=dev
+
 A small utility for converting between duration units. E.g '7 Weeks' to Micro Seconds.
 
 ## Installation
