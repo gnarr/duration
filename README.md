@@ -5,8 +5,8 @@
 
 [1]: https://travis-ci.org/gnarr/duration.svg?branch=master
 [2]: https://travis-ci.org/gnarr/duration
-[3]: https://coveralls.io/repos/github/gnarr/duration/badge.svg?branch=master]
-[4]: https://coveralls.io/github/gnarr/duration?branch=master]
+[3]: https://coveralls.io/repos/github/gnarr/duration/badge.svg?branch=master
+[4]: https://coveralls.io/github/gnarr/duration?branch=master
 [5]: https://img.shields.io/npm/v/duration-converter.svg?style=flat-square
 [6]: https://www.npmjs.com/package/duration-converter
 
