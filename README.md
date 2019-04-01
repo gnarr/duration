@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/gnarr/duration/badge.svg?branch=master)](https://coveralls.io/github/gnarr/duration?branch=master)
+
 # duration
 A small utility for converting between duration units. E.g '7 Weeks' to Micro Seconds.
 
