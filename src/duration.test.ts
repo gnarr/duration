@@ -56,20 +56,36 @@ test("convert millenniums to nanoseconds", () => {
   expect(new Duration("2 millenniums").NanoSeconds).toBe(63072000000000000000);
 });
 
+test("convert single millennium to nanoseconds", () => {
+  expect(new Duration("1 millennium").NanoSeconds).toBe(31536000000000000000);
+});
+
 test("convert millenniums to centuries", () => {
   expect(new Duration("2 millenniums").Centuries).toBe(20);
 });
 
 test("convert centuries to decades", () => {
-  expect(new Duration("60 decades").Centuries).toBe(6);
+  expect(new Duration("6 centuries").Decades).toBe(60);
+});
+
+test("convert single century to decades", () => {
+  expect(new Duration("1 century").Decades).toBe(10);
 });
 
 test("convert decades to years", () => {
-  expect(new Duration("20 years").Decades).toBe(2);
+  expect(new Duration("2 decades").Years).toBe(20);
+});
+
+test("convert single decade to years", () => {
+  expect(new Duration("1 decade").Years).toBe(10);
 });
 
 test("convert years to weeks", () => {
   expect(new Duration("7 years").Weeks).toBe(365);
+});
+
+test("convert single year to weeks", () => {
+  expect(new Duration("1 year").Weeks).toBe(52.142857142857146);
 });
 
 test("convert years to days", () => {
@@ -80,28 +96,56 @@ test("convert weeks to days", () => {
   expect(new Duration("5 weeks").Days).toBe(35);
 });
 
+test("convert single week to days", () => {
+  expect(new Duration("1 week").Days).toBe(7);
+});
+
 test("convert days to hours", () => {
   expect(new Duration("2 days").Hours).toBe(48);
+});
+
+test("convert single day to hours", () => {
+  expect(new Duration("1 days").Hours).toBe(24);
 });
 
 test("convert hours to minutes", () => {
   expect(new Duration("7 hours").Minutes).toBe(420);
 });
 
+test("convert single hour to minutes", () => {
+  expect(new Duration("1 hour").Minutes).toBe(60);
+});
+
 test("convert minutes to seconds", () => {
   expect(new Duration("3 minutes").Seconds).toBe(180);
+});
+
+test("convert single minute to seconds", () => {
+  expect(new Duration("1 minutes").Seconds).toBe(60);
 });
 
 test("convert seconds to milliseconds", () => {
   expect(new Duration("7 seconds").MilliSeconds).toBe(7000);
 });
 
+test("convert single second to milliseconds", () => {
+  expect(new Duration("1 seconds").MilliSeconds).toBe(1000);
+});
+
 test("convert milliseconds to microseconds", () => {
   expect(new Duration("2 milliseconds").MicroSeconds).toBe(2000);
 });
 
+test("convert single millisecond to microseconds", () => {
+  expect(new Duration("1 milliseconds").MicroSeconds).toBe(1000);
+});
+
 test("convert microseconds to nanoseconds", () => {
   expect(new Duration("5 microseconds").NanoSeconds).toBe(5000);
+});
+
+test("convert single microsecond to nanoseconds", () => {
+  expect(new Duration("1 microseconds").NanoSeconds).toBe(1000);
 });
 
 test("convert floating point microseconds to nanoseconds", () => {
@@ -112,11 +156,15 @@ test("convert floating point microseconds to milliseconds", () => {
   expect(new Duration("0.432 microseconds").MilliSeconds).toBe(0.000432);
 });
 
-test("Convert to human readable form", () => {
+test("Convert to human readable form singular", () => {
+  expect(new Duration("60 seconds").toString()).toBe("1 minute");
+});
+
+test("Convert to human readable form plural", () => {
   expect(new Duration("840 seconds").toString()).toBe("14 minutes");
 });
 
-test("Convert to human readable form", () => {
+test("Convert to human readable form zero", () => {
   expect(new Duration("0 microseconds").toString()).toBe("0 microseconds");
 });
 

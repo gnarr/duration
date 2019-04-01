@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.2.8
+- Improved test coverage.
 ## 1.2.7
 - add Changelog
 ## 1.2.6
