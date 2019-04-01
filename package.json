@@ -10,6 +10,7 @@
     "lint": "tslint -c tslint.json src/*.ts --fix --format verbose --project tsconfig.json",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
+  "files": ["dist/duration.js", "dist/duration.d.ts"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gnarr/duration.git"

@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.2.9
+- Added files property to package.json to only include compiled typescript and interface.
 ## 1.2.8
 - Improved test coverage.
 ## 1.2.7
