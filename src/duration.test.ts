@@ -4,6 +4,10 @@ test("convert nanoseconds to microseconds", () => {
   expect(new Duration("4000 nanoseconds").MicroSeconds).toBe(4);
 });
 
+test("convert single nanoseconds to microseconds", () => {
+  expect(new Duration("1001 nanosecond").MicroSeconds).toBe(1.001);
+});
+
 test("convert microseconds to milliseconds", () => {
   expect(new Duration("9000 microseconds").MilliSeconds).toBe(9);
 });
@@ -105,7 +109,7 @@ test("convert days to hours", () => {
 });
 
 test("convert single day to hours", () => {
-  expect(new Duration("1 days").Hours).toBe(24);
+  expect(new Duration("1 day").Hours).toBe(24);
 });
 
 test("convert hours to minutes", () => {
@@ -121,7 +125,7 @@ test("convert minutes to seconds", () => {
 });
 
 test("convert single minute to seconds", () => {
-  expect(new Duration("1 minutes").Seconds).toBe(60);
+  expect(new Duration("1 minute").Seconds).toBe(60);
 });
 
 test("convert seconds to milliseconds", () => {
@@ -129,7 +133,7 @@ test("convert seconds to milliseconds", () => {
 });
 
 test("convert single second to milliseconds", () => {
-  expect(new Duration("1 seconds").MilliSeconds).toBe(1000);
+  expect(new Duration("1 second").MilliSeconds).toBe(1000);
 });
 
 test("convert milliseconds to microseconds", () => {
@@ -137,7 +141,7 @@ test("convert milliseconds to microseconds", () => {
 });
 
 test("convert single millisecond to microseconds", () => {
-  expect(new Duration("1 milliseconds").MicroSeconds).toBe(1000);
+  expect(new Duration("1 millisecond").MicroSeconds).toBe(1000);
 });
 
 test("convert microseconds to nanoseconds", () => {
@@ -145,7 +149,7 @@ test("convert microseconds to nanoseconds", () => {
 });
 
 test("convert single microsecond to nanoseconds", () => {
-  expect(new Duration("1 microseconds").NanoSeconds).toBe(1000);
+  expect(new Duration("1 microsecond").NanoSeconds).toBe(1000);
 });
 
 test("convert floating point microseconds to nanoseconds", () => {
