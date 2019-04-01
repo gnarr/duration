@@ -9,7 +9,7 @@ A small utility for converting between duration units. E.g '7 Weeks' to Micro Se
 
 ## Example usage:
 ```javascript
-const Duration = require('duration-converter');
+const { Duration } = require('duration-converter');
 
 const sevenWeeks = new Duration('7 Weeks');
 const milliseconds = sevenWeeks.MilliSeconds;
