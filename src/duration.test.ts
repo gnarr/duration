@@ -236,7 +236,13 @@ test("should create a new instance from millenniums", () => {
   expect(Duration.fromMillenniums(2).Years).toBe(2000);
 });
 
-test("should give a single month cookies when provided with months", () => {
+test("should give a single month when provided with months", () => {
 // tslint:disable-next-line: no-string-literal
   expect(Duration["toSingular"]("Months")).toBe("Month");
+});
+
+test("should create a new instance from two dates", () => {
+  const a = new Date(2019, 3, 14);
+  const b = new Date(2019, 3, 15);
+  expect(Duration.between(a, b).Hours).toBe(24);
 });
