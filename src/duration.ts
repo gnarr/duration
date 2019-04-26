@@ -154,6 +154,13 @@ export class Duration implements IDuration {
     duration.Millenniums = millenniums;
     return duration;
   }
+  public static between(a: Date, b: Date) {
+    const duration = new Duration();
+    const aMilliseconds = a.getTime();
+    const bMilliseconds = b.getTime();
+    duration.MilliSeconds = Math.abs(aMilliseconds - bMilliseconds);
+    return duration;
+  }
   public static getters() {
     return [
       "NanoSeconds",

@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.0
+- Added between function that takes two dates and creates a duration between the dates.
+- Updated dependencies.
 ## 1.2.9
 - Added files property to package.json to only include compiled typescript and interface.
 ## 1.2.8

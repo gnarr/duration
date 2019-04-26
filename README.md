@@ -37,6 +37,13 @@ const hours = threeDays.Hours;
 // will print out "4 days"
 console.log(Duration.fromSeconds(345600).toString());
 
+const a = new Date(2019, 3, 14);
+const b = new Date(2019, 3, 15);
+const betweenDates = Duration.between(a, b);
+
+// will print 86400000
+console.log(betweenDates.MilliSeconds);
+
 ```
 
 ## Warning!
