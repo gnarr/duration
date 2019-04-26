@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.3.1
+- Fixed bugged npm release.
 ## 1.3.0
 - Added between function that takes two dates and creates a duration between the dates.
 - Updated dependencies.
