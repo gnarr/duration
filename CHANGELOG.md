@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.3.3
+- Republish.
 ## 1.3.2
 - Added months as a supported duration unit. A month is defined as being one twelvth of a year.
 ## 1.3.1
