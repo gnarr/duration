@@ -40,6 +40,18 @@ test("convert days to years", () => {
   expect(new Duration("365 weeks").Years).toBe(7);
 });
 
+test("convert months to years", () => {
+  expect(new Duration("36 months").Years).toBe(3);
+});
+
+test("convert a single month to days", () => {
+  expect(new Duration("1 month").Days).toBe(365 / 12);
+});
+
+test("convert years to months", () => {
+  expect(new Duration("1 year").Months).toBe(12);
+});
+
 test("convert years to decades", () => {
   expect(new Duration("30 years").Decades).toBe(3);
 });
@@ -218,6 +230,10 @@ test("should create a new instance from days", () => {
 
 test("should create a new instance from weeks", () => {
   expect(Duration.fromWeeks(10).Days).toBe(70);
+});
+
+test("should create a new instance from months", () => {
+  expect(Duration.fromMonths(120).Years).toBe(10);
 });
 
 test("should create a new instance from years", () => {

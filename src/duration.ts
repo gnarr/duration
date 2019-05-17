@@ -7,6 +7,7 @@ export interface IDuration {
   Hours: number;
   Days: number;
   Weeks: number;
+  Months: number;
   Years: number;
   Decades: number;
   Centuries: number;
@@ -69,6 +70,12 @@ export class Duration implements IDuration {
   }
   set Weeks(weeks) {
     this.Days = weeks * 7;
+  }
+  get Months() {
+    return this.Years * 12;
+  }
+  set Months(months) {
+    this.Years = months / 12;
   }
   get Years() {
     return this.Days / 365;
@@ -134,6 +141,11 @@ export class Duration implements IDuration {
     duration.Weeks = weeks;
     return duration;
   }
+  public static fromMonths(months: number) {
+    const duration = new Duration();
+    duration.Months = months;
+    return duration;
+  }
   public static fromYears(years: number) {
     const duration = new Duration();
     duration.Years = years;
@@ -154,10 +166,10 @@ export class Duration implements IDuration {
     duration.Millenniums = millenniums;
     return duration;
   }
-  public static between(a: Date, b: Date) {
+  public static between(a: Date | number, b: Date | number) {
     const duration = new Duration();
-    const aMilliseconds = a.getTime();
-    const bMilliseconds = b.getTime();
+    const aMilliseconds = a instanceof Date ? a.getTime() : a;
+    const bMilliseconds = b instanceof Date ? b.getTime() : b;
     duration.MilliSeconds = Math.abs(aMilliseconds - bMilliseconds);
     return duration;
   }
@@ -171,6 +183,7 @@ export class Duration implements IDuration {
       "Hours",
       "Days",
       "Weeks",
+      "Months",
       "Years",
       "Decades",
       "Centuries",
@@ -228,6 +241,10 @@ export class Duration implements IDuration {
       case "week":
       case "weeks":
         this.Weeks = n;
+        return;
+      case "month":
+      case "months":
+        this.Months = n;
         return;
       case "year":
       case "years":
