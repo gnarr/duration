@@ -1,6 +1,6 @@
 {
   "name": "duration-converter",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "a small utility for converting between duration units. ",
   "main": "dist/duration.js",
   "types": "dist/duration.d.ts",
