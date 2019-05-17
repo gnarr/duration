@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.4
+- Updated outdated dev dependencies.
+- Added a test for 100% coverage.
 ## 1.3.3
 - Republish.
 ## 1.3.2

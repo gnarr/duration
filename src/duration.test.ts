@@ -262,3 +262,9 @@ test("should create a new instance from two dates", () => {
   const b = new Date(2019, 3, 15);
   expect(Duration.between(a, b).Hours).toBe(24);
 });
+
+test("should create a new instance from two timestamps", () => {
+  const a = new Date(2019, 3, 14).getTime();
+  const b = new Date(2019, 3, 15).getTime();
+  expect(Duration.between(a, b).Hours).toBe(24);
+});
