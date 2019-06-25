@@ -4,6 +4,7 @@
 [![npm][5]][6]
 [![dependencies Status][7]][8]
 [![devDependencies Status][9]][10]
+[![Downloads/week][11][12]
 
 [1]: https://travis-ci.org/gnarr/duration.svg?branch=master
 [2]: https://travis-ci.org/gnarr/duration
@@ -15,6 +16,8 @@
 [8]: https://david-dm.org/gnarr/duration
 [9]: https://david-dm.org/gnarr/duration/dev-status.svg
 [10]: https://david-dm.org/gnarr/duration?type=dev
+[11]: https://img.shields.io/npm/dw/duration-converter.svg
+[12]: https://www.npmjs.com/package/duration-converter
 
 A small utility for converting between duration units. E.g '7 Weeks' to Micro Seconds.
 
