@@ -4,7 +4,7 @@
 [![npm][5]][6]
 [![dependencies Status][7]][8]
 [![devDependencies Status][9]][10]
-[![Downloads/week][11][12]
+[![Downloads/week][11]][12]
 
 [1]: https://travis-ci.org/gnarr/duration.svg?branch=master
 [2]: https://travis-ci.org/gnarr/duration
