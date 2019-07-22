@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.3.6
+- Dev dependency security updates.
 ## 1.3.5
 - Updated outdated dev dependencies.
 ## 1.3.4
