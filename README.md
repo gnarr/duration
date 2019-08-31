@@ -5,6 +5,7 @@
 [![dependencies Status][7]][8]
 [![devDependencies Status][9]][10]
 [![Downloads/week][11]][12]
+[![Dependabot Status][13]][14]
 
 [1]: https://travis-ci.org/gnarr/duration.svg?branch=master
 [2]: https://travis-ci.org/gnarr/duration
@@ -18,6 +19,8 @@
 [10]: https://david-dm.org/gnarr/duration?type=dev
 [11]: https://img.shields.io/npm/dw/duration-converter.svg
 [12]: https://www.npmjs.com/package/duration-converter
+[13]: https://api.dependabot.com/badges/status?host=github&repo=gnarr/duration
+[14]: https://dependabot.com
 
 A small utility for converting between duration units. E.g '7 Weeks' to Micro Seconds.
 
