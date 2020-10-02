@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/gnarr/duration#readme",
   "devDependencies": {
-    "@types/jest": "^24.9.1",
+    "@types/jest": "^26.0.14",
     "@types/node": "^13.7.4",
     "coveralls": "^3.1.0",
     "jest": "^24.9.0",
